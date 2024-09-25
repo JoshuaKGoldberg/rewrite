@@ -179,17 +179,19 @@ export interface RulesMeta {
 	hasSuggestions?: boolean | undefined;
 }
 
+export interface RuleContextSettings {
+	LangOptions: LanguageOptions;
+	Code?: SourceCode;
+	RuleOptions: unknown[];
+	Node?: unknown;
+}
+
 /**
  * Represents the context object that is passed to a rule. This object contains
  * information about the current state of the linting process and is the rule's
  * view into the outside world.
  */
-export interface RuleContext<
-	LangOptions = LanguageOptions,
-	Code extends SourceCode = SourceCode,
-	RuleOptions = unknown[],
-	Node = unknown,
-> {
+export interface RuleContext<Settings extends RuleContextSettings> {
 	/**
 	 * The current working directory for the session.
 	 */
@@ -226,13 +228,13 @@ export interface RuleContext<
 	/**
 	 * The source code object that the rule is running on.
 	 */
-	sourceCode: Code;
+	sourceCode: Settings["Code"];
 
 	/**
 	 * Returns the source code object that the rule is running on.
 	 * @deprecated Use `sourceCode` instead.
 	 */
-	getSourceCode(): Code;
+	getSourceCode(): Settings["Code"];
 
 	/**
 	 * Shared settings for the configuration.
@@ -248,7 +250,7 @@ export interface RuleContext<
 	/**
 	 * The language options for the configuration.
 	 */
-	languageOptions: LangOptions;
+	languageOptions: Settings["LangOptions"];
 
 	/**
 	 * The CommonJS path to the parser used while parsing this file.
@@ -264,7 +266,7 @@ export interface RuleContext<
 	/**
 	 * The rule's configured options.
 	 */
-	options: RuleOptions;
+	options: Settings["RuleOptions"];
 
 	/**
 	 * The report function that the rule should use to report problems.
@@ -426,15 +428,17 @@ export type SuggestedEdit = SuggestedEditBase & SuggestionMessage;
 
 // #endregion
 
+export interface RuleDefinitionSettings {
+	LangOptions: LanguageOptions;
+	Code: SourceCode;
+	RuleOptions: unknown[];
+	Visitor: RuleVisitor;
+}
+
 /**
  * The definition of an ESLint rule.
  */
-export interface RuleDefinition<
-	LangOptions = LanguageOptions,
-	Code extends SourceCode = SourceCode,
-	RuleOptions = unknown[],
-	Visitor extends RuleVisitor = RuleVisitor,
-> {
+export interface RuleDefinition<Settings extends RuleDefinitionSettings> {
 	/**
 	 * The meta information for the rule.
 	 */
@@ -445,7 +449,7 @@ export interface RuleDefinition<
 	 * @param context The rule context.
 	 * @returns The rule visitor.
 	 */
-	create(context: RuleContext<LangOptions, Code, RuleOptions>): Visitor;
+	create(context: RuleContext<Settings>): Settings["Visitor"];
 }
 
 //------------------------------------------------------------------------------
