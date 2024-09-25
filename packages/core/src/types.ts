@@ -509,14 +509,16 @@ export type RulesConfig = Record<string, RuleConfig>;
 // Languages
 //------------------------------------------------------------------------------
 
+export interface LanguageSettings {
+	LangOptions: LanguageOptions;
+	Code?: SourceCode;
+	RootNode: unknown;
+}
+
 /**
  * Represents a plugin language.
  */
-export interface Language<
-	LangOptions = LanguageOptions,
-	Code extends SourceCode = SourceCode,
-	RootNode = unknown,
-> {
+export interface Language<Settings extends LanguageSettings> {
 	/**
 	 * Indicates how ESLint should read the file.
 	 */
@@ -545,7 +547,7 @@ export interface Language<
 	/**
 	 * Validates languageOptions for this language.
 	 */
-	validateLanguageOptions(languageOptions: LangOptions): void;
+	validateLanguageOptions(languageOptions: Settings["LangOptions"]): void;
 
 	/**
 	 * Helper for esquery that allows languages to match nodes against
@@ -566,17 +568,17 @@ export interface Language<
 	 */
 	parse(
 		file: File,
-		context: LanguageContext<LangOptions>,
-	): ParseResult<RootNode>; // Future: | Promise<ParseResult>;
+		context: LanguageContext<Settings["LangOptions"]>,
+	): ParseResult<Settings["RootNode"]>; // Future: | Promise<ParseResult>;
 
 	/**
 	 * Creates SourceCode object that ESLint uses to work with a file.
 	 */
 	createSourceCode(
 		file: File,
-		input: OkParseResult<RootNode>,
-		context: LanguageContext<LangOptions>,
-	): Code; // Future: | Promise<Code>;
+		input: OkParseResult<Settings["RootNode"]>,
+		context: LanguageContext<Settings["LangOptions"]>,
+	): Settings["Code"]; // Future: | Promise<Code>;
 }
 
 /**
