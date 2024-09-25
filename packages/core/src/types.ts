@@ -685,19 +685,21 @@ interface InlineConfigElement {
 	};
 }
 
+interface SourceCodeSettings {
+	LangOptions: LanguageOptions;
+	RootNode: unknown;
+	SyntaxElementWithLoc: unknown;
+	ConfigNode: unknown;
+}
+
 /**
  * Represents the basic interface for a source code object.
  */
-interface SourceCodeBase<
-	LangOptions = LanguageOptions,
-	RootNode = unknown,
-	SyntaxElementWithLoc = unknown,
-	ConfigNode = unknown,
-> {
+interface SourceCodeBase<Settings extends SourceCodeSettings> {
 	/**
 	 * Root of the AST.
 	 */
-	ast: RootNode;
+	ast: Settings["RootNode"];
 
 	/**
 	 * The traversal path that tools should take when evaluating the AST.
@@ -711,14 +713,14 @@ interface SourceCodeBase<
 	 * @param syntaxElement The node or token to get the location for.
 	 * @returns The location of the node or token.
 	 */
-	getLoc(syntaxElement: SyntaxElementWithLoc): SourceLocation;
+	getLoc(syntaxElement: Settings["SyntaxElementWithLoc"]): SourceLocation;
 
 	/**
 	 * Retrieves the equivalent of `range` for a given node or token.
 	 * @param syntaxElement The node or token to get the range for.
 	 * @returns The range of the node or token.
 	 */
-	getRange(syntaxElement: SyntaxElementWithLoc): SourceRange;
+	getRange(syntaxElement: Settings["SyntaxElementWithLoc"]): SourceRange;
 
 	/**
 	 * Traversal of AST.
@@ -728,7 +730,7 @@ interface SourceCodeBase<
 	/**
 	 * Applies language options passed in from the ESLint core.
 	 */
-	applyLanguageOptions?(languageOptions: LangOptions): void;
+	applyLanguageOptions?(languageOptions: Settings["LangOptions"]): void;
 
 	/**
 	 * Return all of the inline areas where ESLint should be disabled/enabled
@@ -743,7 +745,7 @@ interface SourceCodeBase<
 	 * Returns an array of all inline configuration nodes found in the
 	 * source code.
 	 */
-	getInlineConfigNodes?(): ConfigNode[];
+	getInlineConfigNodes?(): Settings["ConfigNode"][];
 
 	/**
 	 * Applies configuration found inside of the source code. This method is only
@@ -767,16 +769,8 @@ interface SourceCodeBase<
  * Represents the source of a text file being linted.
  */
 export interface TextSourceCode<
-	LangOptions = LanguageOptions,
-	RootNode = unknown,
-	SyntaxElementWithLoc = unknown,
-	ConfigNode = unknown,
-> extends SourceCodeBase<
-		LangOptions,
-		RootNode,
-		SyntaxElementWithLoc,
-		ConfigNode
-	> {
+	Settings extends SourceCodeSettings = SourceCodeSettings,
+> extends SourceCodeBase<Settings> {
 	/**
 	 * The body of the file that you'd like rule developers to access.
 	 */
@@ -787,16 +781,8 @@ export interface TextSourceCode<
  * Represents the source of a binary file being linted.
  */
 export interface BinarySourceCode<
-	LangOptions = LanguageOptions,
-	RootNode = unknown,
-	SyntaxElementWithLoc = unknown,
-	ConfigNode = unknown,
-> extends SourceCodeBase<
-		LangOptions,
-		RootNode,
-		SyntaxElementWithLoc,
-		ConfigNode
-	> {
+	Settings extends SourceCodeSettings = SourceCodeSettings,
+> extends SourceCodeBase<Settings> {
 	/**
 	 * The body of the file that you'd like rule developers to access.
 	 */
