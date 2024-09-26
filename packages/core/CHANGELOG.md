@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.7.0](https://github.com/JoshuaKGoldberg/rewrite/compare/core-v0.6.0...core-v0.7.0) (2024-09-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add getLoc/getRange to SourceCode interface ([#89](https://github.com/JoshuaKGoldberg/rewrite/issues/89))
+
+### Features
+
+* add CommonJS `core` types ([#102](https://github.com/JoshuaKGoldberg/rewrite/issues/102)) ([6caa5e1](https://github.com/JoshuaKGoldberg/rewrite/commit/6caa5e1408d94387277abc65ff2b6d6b1d005488))
+* Add Directive and DirectiveType ([#112](https://github.com/JoshuaKGoldberg/rewrite/issues/112)) ([e5bbcf1](https://github.com/JoshuaKGoldberg/rewrite/commit/e5bbcf148874be07d5667f34ed395faaf8c72972))
+* Add eslint/core package ([#68](https://github.com/JoshuaKGoldberg/rewrite/issues/68)) ([e3d309d](https://github.com/JoshuaKGoldberg/rewrite/commit/e3d309d93fefe4e10f40568e89f380159c7f63d3))
+* Add getLoc/getRange to SourceCode interface ([#89](https://github.com/JoshuaKGoldberg/rewrite/issues/89)) ([d51f979](https://github.com/JoshuaKGoldberg/rewrite/commit/d51f9791aecd9aa80136a0926e57549df9e25ab3))
+* Add more type definitions ([#81](https://github.com/JoshuaKGoldberg/rewrite/issues/81)) ([df3263b](https://github.com/JoshuaKGoldberg/rewrite/commit/df3263b336b663b22be32bf0c499a70b378b5021))
+* Add plugin-kit package ([#99](https://github.com/JoshuaKGoldberg/rewrite/issues/99)) ([09ce430](https://github.com/JoshuaKGoldberg/rewrite/commit/09ce43073760b69a3bcca89f99793549cd566bf6))
+
 ## [0.6.0](https://github.com/eslint/rewrite/compare/core-v0.5.0...core-v0.6.0) (2024-08-30)
 
 
