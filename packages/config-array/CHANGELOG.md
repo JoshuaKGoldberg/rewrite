@@ -1,5 +1,39 @@
 # Changelog
 
+## [0.20.0](https://github.com/JoshuaKGoldberg/rewrite/compare/config-array-v0.19.0...config-array-v0.20.0) (2024-11-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* correctly detect if file is outside base path on Windows ([#59](https://github.com/JoshuaKGoldberg/rewrite/issues/59))
+* Allow escaping characters on Windows ([#61](https://github.com/JoshuaKGoldberg/rewrite/issues/61))
+* treat `*` as a universal pattern ([#50](https://github.com/JoshuaKGoldberg/rewrite/issues/50))
+* Remove `ConfigArray#isExplicitMatch()` ([#53](https://github.com/JoshuaKGoldberg/rewrite/issues/53))
+* add method `getConfigStatus`, update `isFileIgnored` ([#7](https://github.com/JoshuaKGoldberg/rewrite/issues/7))
+
+### Features
+
+* Add config-array package ([4a2274d](https://github.com/JoshuaKGoldberg/rewrite/commit/4a2274def58d1d41352b33f4e9c197d258fb5a36))
+* add method `getConfigStatus`, update `isFileIgnored` ([#7](https://github.com/JoshuaKGoldberg/rewrite/issues/7)) ([400c5f9](https://github.com/JoshuaKGoldberg/rewrite/commit/400c5f92b7370f8ab6efd1b8dcd90ac1c1d04dd4))
+* Add types to config-array ([#3](https://github.com/JoshuaKGoldberg/rewrite/issues/3)) ([8b80e81](https://github.com/JoshuaKGoldberg/rewrite/commit/8b80e81cd0613ef1eccd15eacc0dbfad7a689dbf))
+* Export ObjectSchema ([#101](https://github.com/JoshuaKGoldberg/rewrite/issues/101)) ([f149f85](https://github.com/JoshuaKGoldberg/rewrite/commit/f149f855e81d4ba798a48873c9ab780bf8a0ac3a))
+* Remove `ConfigArray#isExplicitMatch()` ([#53](https://github.com/JoshuaKGoldberg/rewrite/issues/53)) ([10d8200](https://github.com/JoshuaKGoldberg/rewrite/commit/10d8200fbc99ae4496fc308af82930bb41aeacfa))
+* sync packages meta ([#12](https://github.com/JoshuaKGoldberg/rewrite/issues/12)) ([27fcd25](https://github.com/JoshuaKGoldberg/rewrite/commit/27fcd259dab40e4ac1742b5699b74701a6b3660e))
+
+
+### Bug Fixes
+
+* `basePath` directory can never be ignored ([#92](https://github.com/JoshuaKGoldberg/rewrite/issues/92)) ([c94ab2d](https://github.com/JoshuaKGoldberg/rewrite/commit/c94ab2dea6410698a4b6814f921b39774b0e56ab))
+* Add 'main' and 'types' entries to package.json ([#48](https://github.com/JoshuaKGoldberg/rewrite/issues/48)) ([16ee1fa](https://github.com/JoshuaKGoldberg/rewrite/commit/16ee1fad998cc654208628ccb06958d29f95a3a5))
+* Allow escaping characters on Windows ([#61](https://github.com/JoshuaKGoldberg/rewrite/issues/61)) ([8501890](https://github.com/JoshuaKGoldberg/rewrite/commit/85018903815908bcfd940bbda347f3f17663e4bd))
+* ConfigObject type ([#27](https://github.com/JoshuaKGoldberg/rewrite/issues/27)) ([e42b15d](https://github.com/JoshuaKGoldberg/rewrite/commit/e42b15dc4a424030cac97582c0d500a76b13f328))
+* correctly detect if file is outside base path on Windows ([#59](https://github.com/JoshuaKGoldberg/rewrite/issues/59)) ([f93aa4c](https://github.com/JoshuaKGoldberg/rewrite/commit/f93aa4ca0a9a68b5c90847cd3d24801196abb405))
+* Include package.json ([ce52aaa](https://github.com/JoshuaKGoldberg/rewrite/commit/ce52aaaec724ecf9dc9826efa680f6851b576357))
+* Minor change to trigger new releases ([#13](https://github.com/JoshuaKGoldberg/rewrite/issues/13)) ([8184402](https://github.com/JoshuaKGoldberg/rewrite/commit/8184402d5efc8028380cbdd5669f600aea5c050a))
+* npm and JSR package contents ([#16](https://github.com/JoshuaKGoldberg/rewrite/issues/16)) ([3e9eb67](https://github.com/JoshuaKGoldberg/rewrite/commit/3e9eb67964327ef908ab27fa0f14990580ec801c))
+* treat `*` as a universal pattern ([#50](https://github.com/JoshuaKGoldberg/rewrite/issues/50)) ([79ad4bc](https://github.com/JoshuaKGoldberg/rewrite/commit/79ad4bcd09f73e66168ee3936c3c260af2c9953a))
+* Update and standardize READMEs ([#33](https://github.com/JoshuaKGoldberg/rewrite/issues/33)) ([75521f7](https://github.com/JoshuaKGoldberg/rewrite/commit/75521f7d2e4aac9e77310803e7569d9d5b39869c))
+
 ## [0.19.0](https://github.com/eslint/rewrite/compare/config-array-v0.18.0...config-array-v0.19.0) (2024-10-25)
 
 

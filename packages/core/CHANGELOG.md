@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.10.0](https://github.com/JoshuaKGoldberg/rewrite/compare/core-v0.9.0...core-v0.10.0) (2024-11-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add getLoc/getRange to SourceCode interface ([#89](https://github.com/JoshuaKGoldberg/rewrite/issues/89))
+
+### Features
+
+* Add `Language.defaultLanguageOptions` ([#123](https://github.com/JoshuaKGoldberg/rewrite/issues/123)) ([1ecf0f8](https://github.com/JoshuaKGoldberg/rewrite/commit/1ecf0f88808a7629e06e949dea8eb1ec4fd2f472))
+* add CommonJS `core` types ([#102](https://github.com/JoshuaKGoldberg/rewrite/issues/102)) ([6caa5e1](https://github.com/JoshuaKGoldberg/rewrite/commit/6caa5e1408d94387277abc65ff2b6d6b1d005488))
+* Add Directive and DirectiveType ([#112](https://github.com/JoshuaKGoldberg/rewrite/issues/112)) ([e5bbcf1](https://github.com/JoshuaKGoldberg/rewrite/commit/e5bbcf148874be07d5667f34ed395faaf8c72972))
+* Add eslint/core package ([#68](https://github.com/JoshuaKGoldberg/rewrite/issues/68)) ([e3d309d](https://github.com/JoshuaKGoldberg/rewrite/commit/e3d309d93fefe4e10f40568e89f380159c7f63d3))
+* Add getLoc/getRange to SourceCode interface ([#89](https://github.com/JoshuaKGoldberg/rewrite/issues/89)) ([d51f979](https://github.com/JoshuaKGoldberg/rewrite/commit/d51f9791aecd9aa80136a0926e57549df9e25ab3))
+* Add Language#normalizeLanguageOptions() ([#131](https://github.com/JoshuaKGoldberg/rewrite/issues/131)) ([3591a78](https://github.com/JoshuaKGoldberg/rewrite/commit/3591a7805a060cb130d40d61f200431b782431d8))
+* Add more type definitions ([#81](https://github.com/JoshuaKGoldberg/rewrite/issues/81)) ([df3263b](https://github.com/JoshuaKGoldberg/rewrite/commit/df3263b336b663b22be32bf0c499a70b378b5021))
+* Add plugin-kit package ([#99](https://github.com/JoshuaKGoldberg/rewrite/issues/99)) ([09ce430](https://github.com/JoshuaKGoldberg/rewrite/commit/09ce43073760b69a3bcca89f99793549cd566bf6))
+* Add rule types ([#110](https://github.com/JoshuaKGoldberg/rewrite/issues/110)) ([ffa176f](https://github.com/JoshuaKGoldberg/rewrite/commit/ffa176f0c80c14c8ba088d2ba359af4b2805c4f5))
+
+
+### Bug Fixes
+
+* non-optional properties in generic interfaces ([#132](https://github.com/JoshuaKGoldberg/rewrite/issues/132)) ([d0b2e70](https://github.com/JoshuaKGoldberg/rewrite/commit/d0b2e705c49709cfb92a9110c65cd628c91aaa29))
+
 ## [0.9.0](https://github.com/eslint/rewrite/compare/core-v0.8.0...core-v0.9.0) (2024-11-14)
 
 
